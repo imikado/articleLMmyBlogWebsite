@@ -11,39 +11,12 @@
 </head>
 
 <body>
-  <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+  <?php echo $this->paramList['nav']->render() ?>
 
-    <div class="navbar-brand">
-        <a class="navbar-item" href="index.html">
-            <img src="css/images/logo.png" width="112" height="28">
-        </a>
-
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </div>
-
-    <div class="navbar-menu" id="navbar-menu">
-
-        <div class="navbar-start">
-
-                            <a class="navbar-item " href="index.html">Accueil</a>
-                            <a class="navbar-item is-active" href="about.html">A propos</a>
-            
-        </div>
-
-    </div>
-
-
-</nav>
   <section class="section">
-    <div class="container"><div class="content">
-    <h1>A propos de ce site</h1>
-
-    <p style="text-align:justify">Ce site est juste un exemple de blog conçu avec le framework </p>
-</div></div>
+    <div class="container"><?php foreach ($this->paramList['contentList'] as $contentLoop) :
+                              echo $contentLoop->render();
+                            endforeach; ?></div>
   </section>
 
   <script>
